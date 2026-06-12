@@ -26,7 +26,7 @@ const cards = [
       </svg>
     ),
     title: 'Meeting → action, instantly',
-    body: 'Zoom ends. Meridian reads the transcript, writes the recap, drafts follow-ups, and logs decisions. Before you close the tab.',
+    body: 'Zoom ends. Engram AI reads the transcript, writes the recap, drafts follow-ups, and logs decisions. Before you close the tab.',
   },
   {
     id: 'research',
@@ -40,7 +40,7 @@ const cards = [
       </svg>
     ),
     title: 'On-demand research briefings',
-    body: 'Ask a question. Meridian searches, reads, synthesizes, and saves a clean briefing to Notion.',
+    body: 'Ask a question. Engram AI searches, reads, synthesizes, and saves a clean briefing to Notion.',
   },
   {
     id: 'scheduling',
@@ -67,7 +67,7 @@ const cards = [
       </svg>
     ),
     title: 'Company memory that compounds',
-    body: 'Decisions, context, and people — stored as embeddings, retrieved by meaning. The longer you use Meridian, the smarter it gets.',
+    body: 'Decisions, context, and people — stored as embeddings, retrieved by meaning. The longer you use Engram AI, the smarter it gets.',
   },
   {
     id: 'agent',
@@ -79,7 +79,7 @@ const cards = [
       </svg>
     ),
     title: 'One chat, every tool',
-    body: 'Type a command. Meridian executes across Gmail, Calendar, Slack, and Drive simultaneously. No integrations to manage.',
+    body: 'Type a command. Engram AI executes across Gmail, Calendar, Slack, and Drive simultaneously. No integrations to manage.',
   },
 ];
 

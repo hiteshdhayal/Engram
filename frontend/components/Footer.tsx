@@ -25,12 +25,12 @@ export default function Footer() {
           className="font-display"
           style={{ fontSize: 22, color: 'rgba(255,255,255,0.9)', fontWeight: 300 }}
         >
-          Meridian
+          Engram AI
         </span>
         <span
           style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', fontFamily: 'Inter, sans-serif' }}
         >
-          © 2026 Meridian AI Inc.
+          © 2026 Engram AI Inc.
         </span>
       </div>
 

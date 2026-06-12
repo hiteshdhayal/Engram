@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Meridian — The AI Brain Your Company Never Had",
-  description: "Every meeting, email, and document — understood, connected, and acted on. Meridian automates work, one click at a time. AI infrastructure for ambitious teams.",
-  keywords: "AI, productivity, automation, company brain, meetings, email, Meridian",
+  title: "Engram AI — The AI Brain Your Company Never Had",
+  description: "Every meeting, email, and document — understood, connected, and acted on. Engram AI automates work, one click at a time. AI infrastructure for ambitious teams.",
+  keywords: "AI, productivity, automation, company brain, meetings, email, Engram AI",
   openGraph: {
-    title: "Meridian — AI Infrastructure",
+    title: "Engram AI — AI Infrastructure",
     description: "Every meeting, email, and document — understood, connected, and acted on.",
     type: "website",
   },

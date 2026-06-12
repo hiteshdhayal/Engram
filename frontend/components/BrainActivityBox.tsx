@@ -161,7 +161,7 @@ export default function BrainActivityBox() {
             <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#28c840' }} />
           </div>
           <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#6b7280' }}>
-            Meridian · Brain Activity
+            Engram AI · Brain Activity
           </span>
         </div>
 
@@ -475,10 +475,10 @@ export default function BrainActivityBox() {
                   fontFamily: 'Inter, sans-serif',
                 }}
               >
-                M
+                E
               </div>
               <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, fontWeight: 600, color: '#111827' }}>
-                Meridian
+                Engram AI
               </span>
               <span
                 style={{

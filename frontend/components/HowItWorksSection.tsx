@@ -9,12 +9,12 @@ const steps = [
   {
     num: '01',
     title: 'Ingest',
-    body: 'Corsair connects your tools in one auth flow. Transcripts, emails, docs, and calendar events stream into Meridian continuously.',
+    body: 'Corsair connects your tools in one auth flow. Transcripts, emails, docs, and calendar events stream into Engram AI continuously.',
   },
   {
     num: '02',
     title: 'Understand',
-    body: 'Everything is chunked, embedded, and stored with metadata. Ask about a decision from 6 weeks ago — Meridian finds it in milliseconds.',
+    body: 'Everything is chunked, embedded, and stored with metadata. Ask about a decision from 6 weeks ago — Engram AI finds it in milliseconds.',
   },
   {
     num: '03',
@@ -176,7 +176,7 @@ export default function HowItWorksSection() {
           }}
         >
           <div
-            id="meridian-brain-node"
+            id="engram-brain-node"
             style={{
               width: 100,
               height: 100,
@@ -193,7 +193,7 @@ export default function HowItWorksSection() {
           >
             <img
               src="/brain-logo.png"
-              alt="Meridian Brain"
+              alt="Engram Brain"
               style={{
                 width: '110%',
                 height: '110%',

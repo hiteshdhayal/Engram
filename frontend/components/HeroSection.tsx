@@ -44,7 +44,7 @@ export default function HeroSection() {
           textTransform: 'uppercase',
         }}
       >
-        MERIDIAN · AI INFRASTRUCTURE
+        ENGRAM · AI INFRASTRUCTURE
       </p>
 
       {/* Gravitational lens animation replaced by background image */}

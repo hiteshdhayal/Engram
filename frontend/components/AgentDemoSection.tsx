@@ -161,7 +161,7 @@ export default function AgentDemoSection() {
                 flexShrink: 0,
               }}
             >
-              M
+              E
             </div>
             <div style={{ flex: 1 }}>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', marginBottom: 6, lineHeight: 1.4 }}>
@@ -197,7 +197,7 @@ export default function AgentDemoSection() {
               id="agent-task-input"
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
-              placeholder="Give Meridian a task..."
+              placeholder="Give Engram AI a task..."
               style={{
                 flex: 1,
                 background: 'none',
@@ -246,7 +246,7 @@ export default function AgentDemoSection() {
           <GravitationalLens scale={1.0} />
           <div style={{ marginTop: 24, textAlign: 'center' }}>
             <p className="font-mono-custom" style={{ fontSize: 11, color: '#c9a84c', letterSpacing: '0.25em', marginBottom: 4, fontWeight: 500 }}>
-              MERIDIAN
+              ENGRAM
             </p>
             <p className="font-mono-custom" style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.25em' }}>
               · THINKING

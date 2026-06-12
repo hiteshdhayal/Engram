@@ -24,6 +24,17 @@ const steps = [
 ];
 
 export default function HowItWorksSection() {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section
       id="how-it-works"
@@ -63,76 +74,93 @@ export default function HowItWorksSection() {
       {/* Flow diagram */}
       <div
         className="reveal"
-        style={{
-          maxWidth: 760,
+        style={isMobile ? {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 32,
+          margin: '0 auto 48px',
+          width: '100%',
+        } : {
+          maxWidth: 950,
           margin: '0 auto 80px',
           position: 'relative',
-          height: 320,
+          height: 380,
+          width: '100%',
         }}
       >
-        <svg
-          viewBox="0 0 800 320"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            pointerEvents: 'none',
-          }}
-        >
-          <defs>
-            <filter id="glow-dot" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="4" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
-            </filter>
-          </defs>
+        {!isMobile && (
+          <svg
+            viewBox="0 0 800 320"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              pointerEvents: 'none',
+              display: 'block',
+            }}
+          >
+            <defs>
+              <filter id="glow-dot" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
 
-          {/* Background paths */}
-          <path d="M 100,30 C 100,110 400,90 400,160" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M 300,30 C 300,110 400,110 400,160" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M 500,30 C 500,110 400,110 400,160" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M 700,30 C 700,110 400,90 400,160" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
+            {/* Background paths */}
+            <path d="M 100,30 C 100,110 400,90 400,160" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <path d="M 300,30 C 300,110 400,110 400,160" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <path d="M 500,30 C 500,110 400,110 400,160" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <path d="M 700,30 C 700,110 400,90 400,160" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
 
-          <path d="M 400,160 C 400,210 100,210 100,290" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M 400,160 C 400,210 300,210 300,290" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M 400,160 C 400,210 500,210 500,290" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path d="M 400,160 C 400,210 700,210 700,290" fill="none" stroke="rgba(201,168,76,0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <path d="M 400,160 C 400,210 100,210 100,290" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <path d="M 400,160 C 400,210 300,210 300,290" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <path d="M 400,160 C 400,210 500,210 500,290" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
+            <path d="M 400,160 C 400,210 700,210 700,290" fill="none" stroke="rgba(201,168,76,0.35)" strokeWidth="1.5" strokeDasharray="4 4" />
 
-          {/* Animated data particles flowing down to brain */}
-          <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="2.4s" repeatCount="indefinite" path="M 100,30 C 100,110 400,90 400,160" />
-          </circle>
-          <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="3.0s" repeatCount="indefinite" path="M 300,30 C 300,110 400,110 400,160" />
-          </circle>
-          <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="2.7s" repeatCount="indefinite" path="M 500,30 C 500,110 400,110 400,160" />
-          </circle>
-          <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="3.5s" repeatCount="indefinite" path="M 700,30 C 700,110 400,90 400,160" />
-          </circle>
+            {/* Animated data particles flowing down to brain */}
+            <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="2.4s" repeatCount="indefinite" path="M 100,30 C 100,110 400,90 400,160" />
+            </circle>
+            <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="3.0s" repeatCount="indefinite" path="M 300,30 C 300,110 400,110 400,160" />
+            </circle>
+            <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="2.7s" repeatCount="indefinite" path="M 500,30 C 500,110 400,110 400,160" />
+            </circle>
+            <circle r="4" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M 700,30 C 700,110 400,90 400,160" />
+            </circle>
 
-          {/* Animated data particles flowing from brain to outputs */}
-          <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="2.8s" repeatCount="indefinite" path="M 400,160 C 400,210 100,210 100,290" />
-          </circle>
-          <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="2.2s" repeatCount="indefinite" path="M 400,160 C 400,210 300,210 300,290" />
-          </circle>
-          <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="3.2s" repeatCount="indefinite" path="M 400,160 C 400,210 500,210 500,290" />
-          </circle>
-          <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
-            <animateMotion dur="2.6s" repeatCount="indefinite" path="M 400,160 C 400,210 700,210 700,290" />
-          </circle>
-        </svg>
+            {/* Animated data particles flowing from brain to outputs */}
+            <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="2.8s" repeatCount="indefinite" path="M 400,160 C 400,210 100,210 100,290" />
+            </circle>
+            <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="2.2s" repeatCount="indefinite" path="M 400,160 C 400,210 300,210 300,290" />
+            </circle>
+            <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="3.2s" repeatCount="indefinite" path="M 400,160 C 400,210 500,210 500,290" />
+            </circle>
+            <circle r="3.5" fill="#f0d080" filter="url(#glow-dot)">
+              <animateMotion dur="2.6s" repeatCount="indefinite" path="M 400,160 C 400,210 700,210 700,290" />
+            </circle>
+          </svg>
+        )}
 
         {/* Source nodes row */}
         <div
-          style={{
+          style={isMobile ? {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 12,
+            width: '100%',
+          } : {
             position: 'absolute',
-            top: 10,
+            top: 12,
             left: 0,
             width: '100%',
             display: 'grid',
@@ -145,10 +173,10 @@ export default function HowItWorksSection() {
             <div
               key={node}
               style={{
-                padding: '6px 14px',
+                padding: '8px 16px',
                 border: '1px solid rgba(255,255,255,0.07)',
                 borderRadius: 999,
-                fontSize: 12,
+                fontSize: 13,
                 color: 'rgba(255,255,255,0.85)',
                 fontFamily: 'Inter, sans-serif',
                 display: 'flex',
@@ -167,7 +195,10 @@ export default function HowItWorksSection() {
 
         {/* Center node — Brain Image */}
         <div
-          style={{
+          style={isMobile ? {
+            margin: '8px 0',
+            zIndex: 10,
+          } : {
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -178,12 +209,12 @@ export default function HowItWorksSection() {
           <div
             id="engram-brain-node"
             style={{
-              width: 100,
-              height: 100,
+              width: 160,
+              height: 160,
               border: '2px solid #c9a84c',
               borderRadius: '50%',
               background: 'rgba(5, 5, 8, 0.9)',
-              boxShadow: '0 0 32px rgba(201,168,76,0.3)',
+              boxShadow: '0 0 60px 20px rgba(201, 168, 76, 0.12), 0 0 120px 40px rgba(201, 168, 76, 0.06)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -205,9 +236,15 @@ export default function HowItWorksSection() {
 
         {/* Output nodes row */}
         <div
-          style={{
+          style={isMobile ? {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 12,
+            width: '100%',
+          } : {
             position: 'absolute',
-            bottom: 10,
+            bottom: 12,
             left: 0,
             width: '100%',
             display: 'grid',
@@ -220,10 +257,10 @@ export default function HowItWorksSection() {
             <div
               key={node}
               style={{
-                padding: '6px 14px',
+                padding: '8px 16px',
                 border: '1px solid rgba(255,255,255,0.07)',
                 borderRadius: 999,
-                fontSize: 12,
+                fontSize: 13,
                 color: 'rgba(255,255,255,0.85)',
                 fontFamily: 'Inter, sans-serif',
                 display: 'flex',

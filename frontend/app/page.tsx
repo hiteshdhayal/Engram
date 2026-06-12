@@ -8,7 +8,6 @@ import BrainActivityBox from '@/components/BrainActivityBox';
 import FeatureCardsSection from '@/components/FeatureCardsSection';
 import StatsSection from '@/components/StatsSection';
 import ClosingCTASection from '@/components/ClosingCTASection';
-import Footer from '@/components/Footer';
 
 export default function Home() {
   useScrollReveal();
@@ -22,7 +21,6 @@ export default function Home() {
       <FeatureCardsSection />
       <StatsSection />
       <ClosingCTASection />
-      <Footer />
     </main>
   );
 }
